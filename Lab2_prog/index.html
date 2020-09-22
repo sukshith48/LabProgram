@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var square = 0;
+        var cube = 0;
+        var low = prompt("Enter a lower range")
+        var up = prompt("Enter a Upper range")
+        var res = confirm("Do you want to show table")
+        var myTable = "<h1 align='center'>Program to find Squares and Cubes</h1><table border='1' align='center' width='50%'><tr><th>Number</th><th>Square</th><th>Cube</th></tr>"
+        for(var i = parseInt(low); i <= up; i++)
+        {
+            square = i*i;
+            cube = i*i*i;
+            myTable +="<tr><td>"+i+"</td><td>"+square+"</td><td>"+cube+"</td></tr>"
+        }
+        myTable +="</table>"
+        if(res){
+            document.write(myTable)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
