@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var fs = 5;
+        var top = 5;
+        function textAnimate() {
+            var timer = setInterval(animate,100);
+            var state = 'growing';
+            function animate() {
+                if(state == 'growing'){
+                    fs += 5;
+                    top += 5;
+                    document.getElementById('text').style.fontSize = fs + 'pt';
+                    document.getElementById('text').style.color ="red";
+                    document.getElementById('text').innerText ="Text Growing";
+                    document.getElementById('text').style.position='fixed';
+                    document.getElementById('text').style.top=top+'pt';
+                }
+                else if(state == 'shrinking')
+                {
+                    fs -= 5;
+                    top -= 5;
+                    document.getElementById('text').style.fontSize = fs + 'pt';
+                    document.getElementById('text').style.color = 'green';
+                    document.getElementById('text').innerText = "Text Shrinking";
+                    document.getElementById('text').style.top=top+'pt';
+                }
+                if(fs == 50){
+                    state = 'shrinking';
+                }
+                else if(fs == 5)
+                {
+                    clearInterval(timer);
+                }
+            }
+        }
+    </script>
+    <style>
+        .content{
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="textAnimate()">
+    <div class="content">
+        <h1>Program to Increase/Decrease font size</h1>
+        <p id="text"></p>
+    </div>
+</body>
+</html>
