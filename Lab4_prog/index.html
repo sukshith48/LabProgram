@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab Program 4</title>
+    <script>
+        function perform(){
+            var inp =document.getElementById('ip').value;
+            if(isNaN(inp))
+                findVowel(inp);
+            else
+                reverse(inp);
+        }
+        function findVowel(inp) {
+            var vow = ['a','e','i','o','u'];
+            var pos=0;
+            for(var i=0;i<inp.length;i++){
+                if(vow.includes(inp[i].toLowerCase()))
+                {
+                    pos=i+1;
+                    alert('Vowel Found in LEFTMOST Position : '+pos);
+                    break;
+                }
+            }
+            if(pos==0)
+                alert('Vowel is not found');
+        }
+        function reverse(inp) {
+            var num= parseInt(inp);
+            var rev=0, rem=0;
+            while(num){
+                rem = num%10;
+                num = parseInt(num/10);
+                rev = rev*10+rem;
+            }
+            alert('Reverse of number is : '+rev);
+        }
+    </script>
+</head>
+<body>
+    <h1>Program to find left most vowel or reverse digits</h1>
+    <form>
+        <input type="text" placeholder="Enter an input" id="ip" required>
+        <button type="submit" onclick="perform()">Submit</button>
+    </form>
+</body>
+</html>
